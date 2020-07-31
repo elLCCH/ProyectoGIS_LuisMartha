@@ -23,8 +23,7 @@
 </head>
 <body>
 
-
-    <div id="wrapper">
+    <div id="wrapper" >
         <!-- navbar top -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
             <!-- navbar-header -->
@@ -43,7 +42,7 @@
             <!-- navbar-top-links -->
             <ul class="nav navbar-top-links navbar-right">
                 <!-- main dropdown -->
-                <%--PARTE DE ARRIBA --%>
+                @*<%--PARTE DE ARRIBA --%>*@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-3x"></i>
@@ -71,52 +70,60 @@
         <!-- navbar side -->
         <nav class="navbar-default navbar-static-side" role="navigation">
             <!-- sidebar-collapse -->
-            <div class="sidebar-collapse">
-                <!-- PARTE IZQUIERDA---------------------------------------------------------------------------------------------------- -->
-                <ul class="nav" id="side-menu">
-                    <li>
-                        <!-- user image section-->
-                        <div class="user-section">
-                            <div class="user-section-inner">
-                                <img src="../../../../../assets/img/user.jpg" alt="">
-                            </div>
-                            <div class="user-info">
-                                <div>Jonny <strong>Deen</strong></div>
-                                <div class="user-text-online">
-                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+            <div id="mainwrap">
+                <div class="sidebar-collapse leftcol">
+                    <!-- PARTE IZQUIERDA---------------------------------------------------------------------------------------------------- -->
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <!-- user image section-->
+                            <div class="user-section">
+                                <div class="user-section-inner">
+                                    <img src="../../../../../assets/img/user.jpg" alt="">
+                                </div>
+                                <div class="user-info">
+                                    <div>Jonny <strong>Deen</strong></div>
+                                    <div class="user-text-online">
+                                        <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--end user image section-->
-                    </li>
+                            <!--end user image section-->
+                        </li>
 
-                    <li class="selected">
-                        <a href="../../../../../Vistas/Index.aspx"><i class="fa fa-dashboard fa-fw"></i>PAGINA DE INICIO</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> CREAR<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="../../../../../Vistas/Crear/frmPlanTrabajo.aspx">PLAN DE TRABAJO</a>
-                            </li>
-                            <li>
-                                <a href="../../../../../Vistas/Crear/frmInformeMemoria.aspx">INFORME MEMORIA</a>
-                            </li>
-                        </ul>
-                        <!-- second-level-items -->
-                    </li>
-                    <li>
-                        <a href="../../../../../Vistas/Gestion/frmGestionAsignatura.aspx"><i class="fa fa-flask fa-fw"></i>ASIGNATURA</a>
-                    </li>
-                    <li>
-                        <a href="../../../../../Vistas/Gestion/frmGestionDocente.aspx"><i class="fa fa-table fa-fw"></i>DOCENTES</a>
-                    </li>
-                    <li>
-                        <a href="../../../../../Vistas/Gestion/frmGestionAdministrador.aspx"><i class="fa fa-edit fa-fw"></i>ADMINISTRADORES</a>
-                    </li>
+                        <li class="selected">
+                            <a href="../../../../../Vistas/Index.aspx"><i class="fa fa-dashboard fa-fw"></i>PAGINA DE INICIO</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> CREAR<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../../../../../Vistas/Crear/frmPlanTrabajo.aspx">PLAN DE TRABAJO</a>
+                                </li>
+                                <li>
+                                    <a href="../../../../../Vistas/Crear/frmInformeMemoria.aspx">INFORME MEMORIA</a>
+                                </li>
+                            </ul>
+                            <!-- second-level-items -->
+                        </li>
+                        <li>
+                            <a href="../../../../../Vistas/Gestion/frmGestionAsignatura.aspx"><i class="fa fa-flask fa-fw"></i>ASIGNATURA</a>
+                        </li>
+                        <li>
+                            <a href="../../../../../Vistas/Gestion/frmGestionDocente.aspx"><i class="fa fa-table fa-fw"></i>DOCENTES</a>
+                        </li>
+                        <li>
+                            <a href="../../../../../Vistas/Gestion/frmGestionAdministrador.aspx"><i class="fa fa-edit fa-fw"></i>ADMINISTRADORES</a>
+                        </li>
 
-                </ul>
-                <!-- end side-menu -->
+                    </ul>
+                    <!-- end side-menu -->
+                </div>
+                @*PARTE DERECHE*@
+                <div class="rightcol">
+                    <p> adasdasdasd</p>
+                    @RenderBody()
+                </div>
+
             </div>
             <!-- end sidebar-collapse -->
         </nav>
@@ -135,7 +142,26 @@
     <script src="../../../../assets/scripts/dashboard-demo.js"></script>
     <asp:ContentPlaceHolder ID="partMain" runat="server">
     </asp:ContentPlaceHolder>
-    @RenderBody()
+
+    <style>
+        .leftcol {
+            width: 224px;
+            float: left;
+        }
+
+        .rightcol {
+            width: 656px;
+            float: left;
+        }
+        #mainwrap {
+            width: 880px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+    </style>
+    
+    
 </body>
 </html>
 

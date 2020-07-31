@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -13,16 +12,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Titulo)
+            @Html.DisplayNameFor(model => model.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Contenido)
+            @Html.DisplayNameFor(model => model.Apellido)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Autor)
+            @Html.DisplayNameFor(model => model.ci)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Publicacion)
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cuenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contrasenia)
         </th>
         <th></th>
     </tr>
@@ -30,16 +38,25 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Titulo)
+            @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Contenido)
+            @Html.DisplayFor(modelItem => item.Apellido)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Autor)
+            @Html.DisplayFor(modelItem => item.ci)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Publicacion)
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cuenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contrasenia)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

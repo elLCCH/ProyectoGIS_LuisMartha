@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace ProyectoGIS_LuisMartha.Controllers
 {
@@ -60,29 +61,68 @@ namespace ProyectoGIS_LuisMartha.Controllers
         // GET: Usuarios/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Usuario model = new Usuario();
+            using (var db = new GeneralContext())
+            {
+                var oTabla = db.Usuarios.Find(id);
+                model.Nombre = oTabla.Nombre;
+                model.Apellido = oTabla.Apellido;
+                model.ci = oTabla.ci;
+                model.Contrasenia = oTabla.Contrasenia;
+                model.Direccion = oTabla.Direccion;
+                model.Cuenta = oTabla.Cuenta;
+                model.Telf = oTabla.Telf;
+
+            }
+            return View(model);
+
+            //var model = _repo.ListarPorID(id);
+            //model = model.ToList();
+            //return View(model);
         }
 
         // POST: Usuarios/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Usuario model, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    //el metodo crear lo generamos y este se genero en el Reposytory
+                    _repo.Modificar(model); //queremos crear  y mandamos los datos o modelo
+                    return RedirectToAction("Index");
+                }
+                //return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                //return View();
             }
+            return RedirectToAction("Index");
         }
 
         // GET: Usuarios/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Usuario model = new Usuario();
+            using (var db = new GeneralContext())
+            {
+                var oTabla = db.Usuarios.Find(id);
+                model.Nombre = oTabla.Nombre;
+                model.Apellido = oTabla.Apellido;
+                model.ci = oTabla.ci;
+                model.Contrasenia = oTabla.Contrasenia;
+                model.Direccion = oTabla.Direccion;
+                model.Cuenta = oTabla.Cuenta;
+                model.Telf = oTabla.Telf;
+                
+            }
+            return View(model);
+            //var model = _repo.ListarPorID(id);
+
+            
         }
 
         // POST: Usuarios/Delete/5
@@ -92,13 +132,19 @@ namespace ProyectoGIS_LuisMartha.Controllers
             try
             {
                 // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    //el metodo crear lo generamos y este se genero en el Reposytory
+                    _repo.Eliminar(id); //queremos crear  y mandamos los datos o modelo
+                    return RedirectToAction("Index");
+                }
+                //return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                //return View();
             }
+            return RedirectToAction("Index");
         }
     }
 }
