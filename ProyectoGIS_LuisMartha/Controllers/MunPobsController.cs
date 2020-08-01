@@ -4,42 +4,41 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
-using System.Web.UI;
 
 namespace ProyectoGIS_LuisMartha.Controllers
 {
-    public class UsuariosController : Controller
+    public class MunPobsController : Controller
     {
-        private UsuarioRepository _repo;
-        public UsuariosController()
+        private MunPobRepository _repo;
+        public MunPobsController()
         {
-            _repo = new UsuarioRepository();
+            _repo = new MunPobRepository();
         }
-        // GET: Usuarios
+        // GET: MunPob
         public ActionResult Index()
         {
             var model = _repo.ObtenerTodos();
             return View(model);
 
         }
+        
 
-        // GET: Usuarios/Details/5
+        // GET: MunPobs/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Usuarios/Create
+        // GET: MunPobs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: MunPobs/Create
         [HttpPost]
-        public ActionResult Create(Usuario model)
+        public ActionResult Create(MunPob model)
         {
             try
             {
@@ -59,32 +58,25 @@ namespace ProyectoGIS_LuisMartha.Controllers
             return View(model);
         }
 
-        // GET: Usuarios/Edit/5
+        // GET: MunPobs/Edit/5
         public ActionResult Edit(int id)
         {
-            Usuario model = new Usuario();
+            MunPob model = new MunPob();
             using (var db = new GeneralContext())
             {
-                var oTabla = db.Usuarios.Find(id);
-                model.Nombre = oTabla.Nombre;
-                model.Apellido = oTabla.Apellido;
-                model.ci = oTabla.ci;
-                model.Contrasenia = oTabla.Contrasenia;
-                model.Direccion = oTabla.Direccion;
-                model.Cuenta = oTabla.Cuenta;
-                model.Telf = oTabla.Telf;
+                var oTabla = db.MunPobs.Find(id);
+                model.NomMunicipio = oTabla.NomMunicipio;
+                model.Departamento = oTabla.Departamento;
+                model.UsuarioId = oTabla.UsuarioId;
+                
 
             }
             return View(model);
-
-            //var model = _repo.ListarPorID(id);
-            //model = model.ToList();
-            //return View(model);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: MunPobs/Edit/5
         [HttpPost]
-        public ActionResult Edit(Usuario model, FormCollection collection)
+        public ActionResult Edit(MunPob model, FormCollection collection)
         {
             try
             {
@@ -104,29 +96,23 @@ namespace ProyectoGIS_LuisMartha.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Usuarios/Delete/5
+        // GET: MunPobs/Delete/5
         public ActionResult Delete(int id)
         {
-            Usuario model = new Usuario();
+            MunPob model = new MunPob();
             using (var db = new GeneralContext())
             {
-                var oTabla = db.Usuarios.Find(id);
-                model.Nombre = oTabla.Nombre;
-                model.Apellido = oTabla.Apellido;
-                model.ci = oTabla.ci;
-                model.Contrasenia = oTabla.Contrasenia;
-                model.Direccion = oTabla.Direccion;
-                model.Cuenta = oTabla.Cuenta;
-                model.Telf = oTabla.Telf;
-                
+                var oTabla = db.MunPobs.Find(id);
+                model.NomMunicipio = oTabla.NomMunicipio;
+                model.Departamento = oTabla.Departamento;
+                model.UsuarioId = oTabla.UsuarioId;
+
+
             }
             return View(model);
-            //var model = _repo.ListarPorID(id);
-
-            
         }
 
-        // POST: Usuarios/Delete/5
+        // POST: MunPobs/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

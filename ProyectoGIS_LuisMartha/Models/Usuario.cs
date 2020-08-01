@@ -43,8 +43,9 @@ namespace ProyectoGIS_LuisMartha.Models
         [StringLength(50)]
         public string Contrasenia{ get; set; }
 
-
+        
 
         
+
     }
 }

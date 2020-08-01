@@ -15,5 +15,8 @@ namespace ProyectoGIS_LuisMartha.Models
         }
         //en BlogPost blanco es el nombre de la tabla
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<LayoutMap> LayoutMaps{ get; set; }
+        public DbSet<MunPob> MunPobs{ get; set; }
+        public DbSet<infCOVID> infCOVIDs{ get; set; }
     }
 }

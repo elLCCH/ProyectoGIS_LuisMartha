@@ -249,6 +249,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\infCOVIDsController.cs" />
+    <Compile Include="Controllers\LayoutMapsController.cs" />
+    <Compile Include="Controllers\MunPobsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -262,8 +265,14 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GeneralContext.cs" />
+    <Compile Include="Models\infCOVID.cs" />
+    <Compile Include="Models\LayoutMap.cs" />
+    <Compile Include="Models\MunPob.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\invCOVIDRepository.cs" />
+    <Compile Include="Services\LayoutMapRepository.cs" />
+    <Compile Include="Services\MunPobRepository.cs" />
     <Compile Include="Services\UsuarioRepository.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -312,6 +321,17 @@
     <Content Include="Views\Usuarios\Delete.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\LayoutMaps\Index.cshtml" />
+    <Content Include="Views\LayoutMaps\Create.cshtml" />
+    <Content Include="Views\LayoutMaps\Edit.cshtml" />
+    <Content Include="Views\MunPobs\Index.cshtml" />
+    <Content Include="Views\MunPobs\Create.cshtml" />
+    <Content Include="Views\MunPobs\Edit.cshtml" />
+    <Content Include="Views\MunPobs\Delete.cshtml" />
+    <Content Include="Views\infCOVIDs\Index.cshtml" />
+    <Content Include="Views\infCOVIDs\Create.cshtml" />
+    <Content Include="Views\infCOVIDs\Edit.cshtml" />
+    <Content Include="Views\infCOVIDs\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
