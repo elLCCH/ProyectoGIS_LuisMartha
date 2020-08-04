@@ -17,6 +17,6 @@ namespace ProyectoGIS_LuisMartha.Models
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<LayoutMap> LayoutMaps{ get; set; }
         public DbSet<MunPob> MunPobs{ get; set; }
-        public DbSet<infCOVID> infCOVIDs{ get; set; }
+        public DbSet<infCOVID> infCOVIDs { get; set; }
     }
 }

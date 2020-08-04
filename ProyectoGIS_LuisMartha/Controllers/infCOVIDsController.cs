@@ -11,6 +11,7 @@ namespace ProyectoGIS_LuisMartha.Controllers
     public class infCOVIDsController : Controller
     {
         private infCOVIDRepository _repo;
+        
         public infCOVIDsController()
         {
             _repo = new infCOVIDRepository();
@@ -20,6 +21,7 @@ namespace ProyectoGIS_LuisMartha.Controllers
         public ActionResult Index()
         {
             var model = _repo.ObtenerTodos();
+            
             return View(model);
 
         }
@@ -70,10 +72,7 @@ namespace ProyectoGIS_LuisMartha.Controllers
                 model.DatoDecesos = oTabla.DatoDecesos;
                 model.DatoNuevosCasos = oTabla.DatoNuevosCasos;
                 model.DatoRecuperados = oTabla.DatoRecuperados;
-                model.FechPublicacion = oTabla.FechPublicacion;
-                model.MunPobId = oTabla.MunPobId;
-               
-
+                model.LayoutMapId = oTabla.LayoutMapId;
             }
             return View(model);
         }
@@ -110,8 +109,7 @@ namespace ProyectoGIS_LuisMartha.Controllers
                 model.DatoDecesos = oTabla.DatoDecesos;
                 model.DatoNuevosCasos = oTabla.DatoNuevosCasos;
                 model.DatoRecuperados = oTabla.DatoRecuperados;
-                model.FechPublicacion = oTabla.FechPublicacion;
-                model.MunPobId = oTabla.MunPobId;
+                model.LayoutMapId = oTabla.LayoutMapId;
 
 
             }

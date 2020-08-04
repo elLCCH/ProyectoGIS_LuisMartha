@@ -250,6 +250,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\infCOVIDsController.cs" />
+    <Compile Include="Controllers\InicioController.cs" />
     <Compile Include="Controllers\LayoutMapsController.cs" />
     <Compile Include="Controllers\MunPobsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -332,6 +333,7 @@
     <Content Include="Views\infCOVIDs\Create.cshtml" />
     <Content Include="Views\infCOVIDs\Edit.cshtml" />
     <Content Include="Views\infCOVIDs\Delete.cshtml" />
+    <Content Include="Views\Inicio\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

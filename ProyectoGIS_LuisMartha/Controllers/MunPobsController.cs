@@ -66,7 +66,10 @@ namespace ProyectoGIS_LuisMartha.Controllers
             {
                 var oTabla = db.MunPobs.Find(id);
                 model.NomMunicipio = oTabla.NomMunicipio;
-                model.Departamento = oTabla.Departamento;
+                model.DatoDecesos = oTabla.DatoDecesos;
+                model.DatoNuevosCasos = oTabla.DatoNuevosCasos;
+                model.DatoRecuperados = oTabla.DatoRecuperados;
+                model.FechPublicacion = oTabla.FechPublicacion;
                 model.UsuarioId = oTabla.UsuarioId;
                 
 
@@ -104,7 +107,10 @@ namespace ProyectoGIS_LuisMartha.Controllers
             {
                 var oTabla = db.MunPobs.Find(id);
                 model.NomMunicipio = oTabla.NomMunicipio;
-                model.Departamento = oTabla.Departamento;
+                model.DatoDecesos = oTabla.DatoDecesos;
+                model.DatoNuevosCasos = oTabla.DatoNuevosCasos;
+                model.DatoRecuperados = oTabla.DatoRecuperados;
+                model.FechPublicacion = oTabla.FechPublicacion;
                 model.UsuarioId = oTabla.UsuarioId;
 
 

@@ -12,13 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Usuario.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departamento)
+            @Html.DisplayNameFor(model => model.Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NomMunicipio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatoDecesos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatoRecuperados)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatoNuevosCasos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechPublicacion)
         </th>
         <th></th>
     </tr>
@@ -29,10 +38,19 @@
             @Html.DisplayFor(modelItem => item.Usuario.Nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Departamento)
+            @Html.DisplayFor(modelItem => item.NomMunicipio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NomMunicipio)
+            @Html.DisplayFor(modelItem => item.DatoDecesos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatoRecuperados)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatoNuevosCasos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechPublicacion)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

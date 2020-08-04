@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ProyectoGIS_LuisMartha.Models.LayoutMap>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+
+
+</p>
+<div>
+    @foreach (var item in Model)
+    {
+        <dl class="">
+            <dt>
+                @Html.DisplayNameFor(model => model.Id)
+                @Html.DisplayFor(modelItem => item.Id)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Titulo)
+
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </dt>
+            <dt>
+                <div class="col-md-12">
+                    @*@Html.EditorFor(model => model.Mapa, new { htmlAttributes = new { @class = "form-control" } })*@
+                    <img width="700" src="@Url.Action("GetImagee","LayoutMaps", new { id = item.Id})" />
+                </div>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+                <br />
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.FechPublicacion)
+                @Html.DisplayFor(modelItem => item.FechPublicacion)
+            </dt>
+
+        </dl>
+    }
+</div>
+
+    @*<dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Mapa)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.FechPublicacion)
+            </dt>
+        </dl>*@
+
+
+
+
+
+
+    @*<tr>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </tr>*@
+
+
+
+

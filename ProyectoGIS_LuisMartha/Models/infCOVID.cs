@@ -12,9 +12,6 @@ namespace ProyectoGIS_LuisMartha.Models
         public int Id { get; set; }
 
         [Required]
-        public DateTime FechPublicacion{ get; set; }
-
-        [Required]
         public int DatoDecesos { get; set; }
         [Required]
         public int DatoRecuperados { get; set; }
@@ -22,8 +19,8 @@ namespace ProyectoGIS_LuisMartha.Models
         public int DatoNuevosCasos { get; set; }
        
 
-        public int MunPobId { get; set; } //obtener la id de la otra tabla
-        [ForeignKey("MunPobId")]
-        public MunPob MunPob{ get; set; }
+        public int LayoutMapId { get; set; } //obtener la id de la otra tabla
+        [ForeignKey("LayoutMapId")]
+        public LayoutMap LayoutMap { get; set; }
     }
 }

@@ -11,13 +11,21 @@ namespace ProyectoGIS_LuisMartha.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        public string Departamento { get; set; }
+        
 
         [Required]
         [StringLength(40)]
         public string NomMunicipio { get; set; }
+        
+
+        [Required]
+        public int DatoDecesos { get; set; }
+        [Required]
+        public int DatoRecuperados { get; set; }
+        [Required]
+        public int DatoNuevosCasos { get; set; }
+        [Required]
+        public DateTime FechPublicacion { get; set; }
 
         public int UsuarioId { get; set; } //obtener la id de la otra tabla
         [ForeignKey("UsuarioId")]
