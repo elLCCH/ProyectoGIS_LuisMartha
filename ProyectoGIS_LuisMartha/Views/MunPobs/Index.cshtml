@@ -7,7 +7,13 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href="@Url.Action("Create", "MunPobs")" class="btn btn-primary">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span>
+            <strong>Agregar Nuevo</strong>
+        </span>
+    </a>
 </p>
 <table class="table">
     <tr>
@@ -53,9 +59,17 @@
             @Html.DisplayFor(modelItem => item.FechPublicacion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a href="@Url.Action("Delete", "MunPobs",new { id = item.Id })" class="btn btn-danger">
+                <i class="fa fa-trash-o" aria-hidden="true"> </i>
+               
+            </a>
+            <a href="@Url.Action("Edit", "MunPobs",new { id = item.Id })" class="btn btn-warning">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                
+            </a>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
         </td>
     </tr>
 }

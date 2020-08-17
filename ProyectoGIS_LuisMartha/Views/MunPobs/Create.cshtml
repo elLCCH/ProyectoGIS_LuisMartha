@@ -4,12 +4,12 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2><strong>AGREGAR NUEVO</strong></h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>MunPob</h4>
         <hr />
@@ -71,5 +71,11 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Index", "MunPobs")" class="btn btn-primary">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <span>
+            <strong>Regresar</strong>
+        </span>
+    </a>
+    @*@Html.ActionLink("Back to List", "Index")*@
 </div>

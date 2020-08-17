@@ -4,14 +4,14 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+    <h2><strong>EDITAR INFORMACION COVID-19</strong></h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>infCOVID</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -57,5 +57,11 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Index", "infCOVIDs")" class="btn btn-primary">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <span>
+            <strong>Regresar</strong>
+        </span>
+    </a>
+    @*@Html.ActionLink("Back to List", "Index")*@
 </div>

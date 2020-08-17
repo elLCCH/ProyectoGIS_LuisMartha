@@ -122,23 +122,55 @@ namespace ProyectoGIS_LuisMartha.Controllers
         // GET: LayoutMaps/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+
+            LayoutMap model = new LayoutMap();
+            using (var db = new GeneralContext())
+            {
+                var oTabla = db.LayoutMaps.Find(id);
+                model.Id = oTabla.Id;
+                model.Mapa = oTabla.Mapa;
+                model.Titulo = oTabla.Titulo;
+                model.Descripcion = oTabla.Descripcion;
+                model.FechPublicacion = oTabla.FechPublicacion;
+                model.UsuarioId = oTabla.UsuarioId;
+            }
+            return View(model);
         }
 
         // POST: LayoutMaps/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(LayoutMap model, FormCollection collection)
         {
+            //byte[] imagenActual = null;
+
+            //HttpPostedFileBase FileBase = Request.Files[0];
+            //if (FileBase == null)
+            //{
+            //    imagenActual = db.LayoutMaps.SingleOrDefault(t => t.Id == model.Id).Mapa;
+            //}
+            //else
+            //{
+            //    WebImage image = new WebImage(FileBase.InputStream);
+            //    model.Mapa = image.GetBytes();
+            //}
+            //hasta aca es sobre la imagen enBD
+
             try
             {
-                // TODO: Add delete logic here
-
+                // TODO: Add update logic here
+                //if (ModelState.IsValid)
+                //{
+                //el metodo crear lo generamos y este se genero en el Reposytory
+                _repo.Eliminar(model.Id); //queremos crear  y mandamos los datos o modelo
                 return RedirectToAction("Index");
+                //}
+                //return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                //return View();
             }
+            return RedirectToAction("Index");
         }
         public  ActionResult getImagee(int id)
         {

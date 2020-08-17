@@ -1,0 +1,70 @@
+﻿@model ProyectoGIS_LuisMartha.Models.LayoutMap
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h2><strong>ELIMINAR REGISTRO</strong></h2>
+
+<h3><strong>¿Esta seguro de eliminar este registro?</strong></h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mapa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mapa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechPublicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechPublicacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <a href="@Url.Action("Index", "LayoutMaps")" class="btn btn-primary">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <span>
+                    <strong>Regresar</strong>
+                </span>
+            </a>
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </div>
+    }
+</div>
