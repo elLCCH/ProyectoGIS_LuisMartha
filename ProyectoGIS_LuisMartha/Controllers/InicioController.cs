@@ -21,7 +21,19 @@ namespace ProyectoGIS_LuisMartha.Controllers
             return View(model);
 
         }
-        
+        public ActionResult Map(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
         // GET: Inicio/Details/5
         public ActionResult Details(int id)

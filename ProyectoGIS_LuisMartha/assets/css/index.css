@@ -1,0 +1,162 @@
+﻿@charset "utf-8";
+
+/*LA PARTE DE ARRIBA*/
+.titulo {
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    padding-top: 2.5%;
+    padding-bottom: 5%;
+    margin: 0;
+}
+
+#form1 {
+    height: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.encabezado {
+    background-color: #002147;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+/*FONDO*/
+body {
+    /*background: url(../img/fondodelapices.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+
+/*MENU HORIZONTAL*/
+.barraMenu {
+    position: relative;
+    top: 5px;
+}
+
+    .barraMenu nav {
+        background: #1867A2;
+        overflow: hidden;
+    }
+
+        .barraMenu nav ul {
+            list-style: none;
+        }
+
+            .barraMenu nav ul li {
+                float: left;
+                position: relative;
+                bottom: 7px;
+            }
+
+                .barraMenu nav ul li a {
+                    padding: 5px 20px;
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                }
+
+                    .barraMenu nav ul li a:hover {
+                        background: #75ACEC;
+                    }
+
+/*.tituloLogin {
+    background-color: #2287D0;
+    height: 50px;
+    width: 400px;
+    margin: 0;
+    padding: 0;
+}*/
+/*LOGIN*/
+.titulo_iniciar_sesion {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(255, 255, 255, 0.781);
+    padding-top: 4%;
+    padding-bottom: 4%;
+    height: 25px;
+    background-color: #2287D0;
+}
+
+.datosLogin {
+    background-color: #f5f5f5;
+    height: 245px;
+    width: 375px;
+    padding-bottom: 25px;
+}
+
+/*input , textarea{ /*textarea son los textboxs*/
+/*    margin-bottom: 40px;
+    width:85%;
+    padding: 6px; /*tamaño de los texbox*/
+/*}*/
+
+.textEmail, .textPassword {
+    margin-bottom: 40px;
+    width: 85%;
+    padding: 6px;
+}
+
+
+.imgUsuario, .imgPassword {
+    height: 30px;
+    width: 30px;
+    float: left;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.checkbox {
+    position: relative;
+    bottom: 10px;
+    text-align: start;
+    padding: 8px;
+}
+
+.boton {
+    width: 320px;
+    height: 30px;
+    background-color: #009DC8;
+    border: none;
+    cursor: pointer;
+}
+
+    .boton:hover {
+        background: #4792be;
+    }
+
+
+.ckbox-theme input[type=checkbox]:checked + label::after {
+    border-color: #1867A2;
+    background-color: #2287D0;
+}
+/*MISION VISION*/
+
+.Mision {
+    position: relative;
+    top: 12px;
+    left: 10%;
+    width: 70%;
+    float: left;
+    background: rgb(92, 169, 228);
+}
+
+.Vision {
+    position: relative;
+    top: 20px;
+    left: 10%;
+    width: 70%;
+    float: left;
+    background: rgb(92, 169, 228);
+}

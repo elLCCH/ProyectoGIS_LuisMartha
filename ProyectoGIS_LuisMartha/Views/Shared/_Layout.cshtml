@@ -48,7 +48,14 @@
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="../../../../../../#"><i class="fa fa-user fa-fw"></i>Mi Perfil</a>
+                            @if (Convert.ToString(Session["ID"]) == "") //esta inactivo
+                            {
+                                <a href="../frmLogin"><i class="fa fa-user fa-fw"></i>Iniciar Sesion</a>
+                            }
+                            else
+                            {
+                                <a href="../../../../../../Usuarios/Edit/@(Session["ID"])"><i class="fa fa-user fa-fw"></i>Mi Perfil</a>
+                            }
                         </li>
                         <li class="divider"></li>
                         <li>

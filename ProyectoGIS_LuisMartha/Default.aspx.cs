@@ -11,7 +11,7 @@ namespace ProyectoGIS_LuisMartha
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["ID"] = "";
         }
     }
 }

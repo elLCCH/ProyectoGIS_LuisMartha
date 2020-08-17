@@ -137,6 +137,7 @@
     <Content Include="assets\builder_embed.css" />
     <Content Include="assets\common.js" />
     <Content Include="assets\common_vendor.js" />
+    <Content Include="assets\css\index.css" />
     <Content Include="assets\css\main-style.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\favicon.ico" />
@@ -228,6 +229,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\frmPrueba.aspx" />
+    <Content Include="frmLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -308,6 +310,13 @@
     <Compile Include="Views\frmPrueba.aspx.designer.cs">
       <DependentUpon>frmPrueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.aspx.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLogin.aspx.designer.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\General.Master.cs">
       <DependentUpon>General.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -339,7 +348,7 @@
     <Content Include="Views\infCOVIDs\Edit.cshtml" />
     <Content Include="Views\infCOVIDs\Delete.cshtml" />
     <Content Include="Views\Inicio\Index.cshtml" />
-    <Content Include="Views\Inicio\Mapa.cshtml" />
+    <Content Include="Views\Inicio\Map.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

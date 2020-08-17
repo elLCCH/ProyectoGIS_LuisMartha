@@ -50,11 +50,28 @@
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="../../../../../../#"><i class="fa fa-user fa-fw"></i>Mi Perfil</a>
+                            @if (Convert.ToString(Session["ID"]) == "") //esta inactivo
+                            {
+                                <a href="../frmLogin"><i class="fa fa-user fa-fw"></i>Iniciar Sesion</a>
+                            }
+                            else
+                            {
+                                <a href="../../../../../../Usuarios/Edit/@(Session["ID"])"><i class="fa fa-user fa-fw"></i>Mi Perfil</a>
+                            }
+
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="../../../../../../Default.aspx"><i class="fa fa-sign-out fa-fw"></i>Salir</a>
+                            @if (Convert.ToString(Session["ID"]) == "")
+                            {
+
+                            }
+                            else
+                            {
+                                
+                                <a href="../../../../../../Default.aspx"><i class="fa fa-sign-out fa-fw"></i>Salir</a>
+                            }
+
                         </li>
                     </ul>
                     <!-- end dropdown-user -->
@@ -75,60 +92,102 @@
                     <!-- PARTE IZQUIERDA---------------------------------------------------------------------------------------------------- -->
                     <ul class="nav" id="side-menu">
                         <li>
-                            <!-- user image section-->
-                            <div class="user-section">
-                                <div class="user-section-inner">
-                                    <img src="../../../../../assets/img/user.jpg" alt="">
-                                </div>
-                                <div class="user-info">
-                                    <div>Jonny <strong>Deen</strong></div>
-                                    <div class="user-text-online">
-                                        <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                            @if (Convert.ToString(Session["ID"]) == "")
+                            {
+                                <!-- user image section-->
+                                <div class="user-section">
+                                    <div class="user-section-inner">
+                                        <img src="../../../../../assets/img/user.jpg" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <div> <strong>Usuario</strong></div>
+                                        <div class="user-text-online">
+                                            <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--end user image section-->
+                                <!--end user image section-->
+                            }
+                            else
+                            {
+                                <!-- user image section-->
+                                <div class="user-section">
+                                    <div class="user-section-inner">
+                                        <img src="../../../../../assets/img/user.jpg" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <div> <strong>@Session["Cuenta"]</strong></div>
+                                        <div class="user-text-online">
+                                            <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end user image section-->
+                            }
+
                         </li>
 
                         <li class="selected">
                             <a href="../../../../Inicio/index"><i class="fa fa-dashboard fa-fw"></i>PAGINA DE INICIO</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> ADMINISTRAR<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="../../../../LayoutMaps/index">MAPAS</a>
-                                </li>
+                            @if (Convert.ToString(Session["ID"]) == "")
+                            {
+                                <a href="#"><i class="fa fa-table fa-fw"></i>INFORMACION COVID<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="../../../../Inicio/Map">POR MUNICIPIOS</a>
+                                    </li>
 
-                                <li>
-                                    <a href="../../../../Usuarios/index">ADMINISTRADORES</a>
-                                </li>
+                                    <li>
+                                        <a href="../../../../Inicio/index">POR DEPARTAMENTOS</a>
+                                    </li>
 
-                            </ul>
+                                </ul>
+<li>
+                                <a href="#"><i class="fa fa-flask fa-fw"></i>COMPARAR MAPAS</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <a href="#"><i class="fa fa-table fa-fw"></i> ADMINISTRAR<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="../../../../LayoutMaps/index">MAPAS</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="../../../../Usuarios/index">ADMINISTRADORES</a>
+                                    </li>
+
+                                </ul>
+                                <!-- second-level-items -->
                             
-                            <!-- second-level-items -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i>INFORMACION COVID<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="../../../../MunPobs/index">POR MUNICIPIOS</a>
-                                </li>
+                            <li>
+                                <a href="#"><i class="fa fa-table fa-fw"></i>INFORMACION COVID<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="../../../../Inicio/Map">POR MUNICIPIOS</a>
+                                    </li>
 
-                                <li>
-                                    <a href="../../../../infCOVIDs/index">POR DEPARTAMENTOS</a>
-                                </li>
+                                    <li>
+                                        <a href="../../../../infCOVIDs/index">POR DEPARTAMENTOS</a>
+                                    </li>
 
-                            </ul>
-                            
-                            <!-- second-level-items -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-flask fa-fw"></i>COMPARAR MAPAS</a>
-                        </li>
-                        
+                                </ul>
 
-                    </ul>
+                                <!-- second-level-items -->
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-flask fa-fw"></i>COMPARAR MAPAS</a>
+                            </li>
+
+                        }
+
+
+
+
+                        </ul>
                     <!-- end side-menu -->
                 </div>
                 @*PARTE DERECHE*@
