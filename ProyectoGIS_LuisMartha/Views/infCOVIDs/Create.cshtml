@@ -3,12 +3,15 @@
 @{
     ViewBag.Title = "Create";
 }
-    <h2><strong>AGREGAR NUEVO</strong></h2>
-
-@using (Html.BeginForm()) 
+<h2><strong>AGREGAR NUEVO</strong></h2>
+@if (Convert.ToString(Session["ID"]) == "")
+{
+    <meta http-equiv="refresh" content="0;URL=/Inicio/Index">
+}
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>infCOVID</h4>
         <hr />

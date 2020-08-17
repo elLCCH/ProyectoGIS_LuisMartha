@@ -3,7 +3,10 @@
 @{
     ViewBag.Title = "Create";
 }
-
+@if (Convert.ToString(Session["ID"]) == "")
+{
+    <meta http-equiv="refresh" content="0;URL=/Inicio/Index">
+}
 <h2><strong>AGREGAR NUEVO</strong></h2>
 
 @using (Html.BeginForm())

@@ -4,10 +4,13 @@
     ViewBag.Title = "Delete";
 }
 <h2><strong>ELIMINAR REGISTRO</strong></h2>
-
+@if (Convert.ToString(Session["ID"]) == "")
+{
+    <meta http-equiv="refresh" content="0;URL=/Inicio/Index">
+}
 <h3><strong>¿Esta seguro de eliminar este registro?</strong></h3>
 <div>
-    
+
     <hr />
     <dl class="dl-horizontal">
         <dt>

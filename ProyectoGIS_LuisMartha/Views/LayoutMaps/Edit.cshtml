@@ -4,8 +4,11 @@
     ViewBag.Title = "Edit";
 }
 
-    <h2><strong>EDITAR LAYOUTs MAPS</strong></h2>
-
+<h2><strong>EDITAR LAYOUTs MAPS</strong></h2>
+@if (Convert.ToString(Session["ID"]) == "")
+{
+    <meta http-equiv="refresh" content="0;URL=/Inicio/Index">
+}
 @using (Html.BeginForm(Html.BeginForm("Edit", "LayoutMaps", FormMethod.Post, new { enctype = "multipart/form-data" })))
 {
     @Html.AntiForgeryToken()
