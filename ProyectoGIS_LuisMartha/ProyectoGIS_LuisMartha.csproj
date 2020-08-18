@@ -350,6 +350,9 @@
     <Content Include="Views\Inicio\Index.cshtml" />
     <Content Include="Views\Inicio\Map.cshtml" />
     <Content Include="Views\LayoutMaps\Delete.cshtml" />
+    <Content Include="Views\Inicio\InfCuidados.cshtml" />
+    <Content Include="Views\Inicio\Comparacion.cshtml" />
+    <Content Include="Views\Inicio\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

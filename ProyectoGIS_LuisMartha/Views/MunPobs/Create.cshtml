@@ -5,7 +5,10 @@
 }
 
 <h2><strong>AGREGAR NUEVO</strong></h2>
-
+@if (Convert.ToString(Session["ID"]) == "")
+{
+    <meta http-equiv="refresh" content="0;URL=/Inicio/Index">
+}
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

@@ -4,7 +4,10 @@
     ViewBag.Title = "Delete";
 }
 <h2><strong>ELIMINAR REGISTRO</strong></h2>
-
+@if (Convert.ToString(Session["ID"]) == "")
+{
+    <meta http-equiv="refresh" content="0;URL=/Inicio/Index">
+}
 <h3><strong>¿Esta seguro de eliminar este registro?</strong></h3>
 <div>
     <h4>MunPob</h4>
@@ -64,15 +67,15 @@
     {
         @Html.AntiForgeryToken()
 
-<div class="form-actions no-color">
-    <a href="@Url.Action("Index", "MunPobs")" class="btn btn-primary">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <span>
-            <strong>Regresar</strong>
-        </span>
-    </a>
-    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-    @*@Html.ActionLink("Back to List", "Index")*@
-</div>
+        <div class="form-actions no-color">
+            <a href="@Url.Action("Index", "MunPobs")" class="btn btn-primary">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <span>
+                    <strong>Regresar</strong>
+                </span>
+            </a>
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </div>
     }
 </div>

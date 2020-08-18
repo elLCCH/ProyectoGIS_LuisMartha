@@ -36,7 +36,7 @@ namespace ProyectoGIS_LuisMartha.Views.Login
                 
                 if (_objUsuarioC.Login(txtCuenta.Text, txtContrasenia.Text))
                 {
-                    Response.Redirect("infCOVIDs/Index");
+                    Response.Redirect("Inicio/Index");
                 }
                 else
                 { 
